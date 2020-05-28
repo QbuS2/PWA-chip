@@ -1,14 +1,19 @@
 {
   "name": "My First PWA Attempt",
   "short_name": "PWA1",
-  "start_url": "/pwa.html",
+  "start_url": "http://127.0.0.1:5500/PWA-chip/pwa.html",
   "display": "standalone",
   "theme_color": "red",
   "background_color":"green",
   "icons": [
     {
-      "src": "/Chip512.png",
+      "src": "Chip512.png",
       "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "Chip192.png",
+      "sizes": "192x192",
       "type": "image/png"
     }
   ]
