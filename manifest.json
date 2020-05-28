@@ -1,7 +1,7 @@
 {
-  "name": "My First PWA Attempt",
-  "short_name": "PWA1",
-  "start_url": "http://127.0.0.1:5500/PWA-chip/pwa.html",
+  "name": "CHIP Virtual Agent",
+  "short_name": "CHIP",
+  "start_url": "pwa.html",
   "display": "standalone",
   "theme_color": "red",
   "background_color":"green",
