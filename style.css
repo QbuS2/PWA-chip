@@ -1,7 +1,6 @@
-
-
 body {
     background-color: #ebebeb;
+    margin: 0;
 }
 
 .container {
@@ -10,22 +9,38 @@ body {
     flex-direction: column;
 }
 
-.title {
-    font-size: 3vh;
-    align-self: center;
+.title-container {
+    position: fixed;
+    top: 0vh;
+    width: 100%;
     margin: 0;
+    background-color: #7a7373;
+    opacity: 0.8;
+    align-self: center;
+    box-shadow: 0 0 10px 2px #888888;
+}
+
+.title {
+    color: #FFF;
+    font-size: 3.3vh;
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2.5vh;
 }
 
 .flag-container {
     display: flex;
     flex-wrap: wrap;
-    place-content: center;
+    place-content: center;    
+    padding-top: 10vh;    
+    padding-bottom: 12vh;
 }
 
 .flag {
     width: 33vh;
     height: 20vh;
-    margin: 2vw;
+    margin: 1.8vw;
 }
 
 .flag img {
@@ -41,10 +56,11 @@ body {
     height: 10vh;
     opacity: 0.8;
     align-self: center;
+    box-shadow: 0 0 10px 2px #888888;
 }
 
 .install-banner-text {
-    color: #FFFFFF;
+    color: #FFF;
     font-size: 4vh;
     font-weight: bold;
     height: 100%;
