@@ -1,21 +1,22 @@
 {
-  "name": "CHIP Virtual Agent",
-  "short_name": "CHIP",
-  "start_url": "https://eustools.fr.capgemini.com/chip_ui/DEMO/e43127ad9018ad11dcc0a695356dbbb3/pwa",
+  "name": "Chip Virtual Agent",
+  "short_name": "Chip",
+  "theme_color": "#ec1b62",
+  "background_color": "#2c3030",
   "display": "standalone",
-  "theme_color": "red",
-  "background_color":"green",
-  "scope": "/",
+  "Scope": "/chip_ui/DEMO/e43127ad9018ad11dcc0a695356dbbb3/pwa/",
+  "start_url": "https://eustools.fr.capgemini.com/chip_ui/DEMO/e43127ad9018ad11dcc0a695356dbbb3/pwa/",
   "icons": [
-    {
-      "src": "Chip512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "Chip192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    }
-  ]
+      {
+          "src": "Chip192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+      },
+      {
+          "src": "Chip512.png",
+          "sizes": "512x512",
+          "type": "image/png"
+      }
+  ],
+  "splash_pages": null
 }
