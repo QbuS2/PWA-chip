@@ -59,6 +59,7 @@ body {
     align-self: center;
     box-shadow: 0 0 10px 2px #888888;
     cursor: pointer;
+    display: block;
 }
 
 .install-banner-text {

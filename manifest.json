@@ -1,10 +1,11 @@
 {
   "name": "CHIP Virtual Agent",
   "short_name": "CHIP",
-  "start_url": "pwa.html",
+  "start_url": "https://eustools.fr.capgemini.com/chip_ui/DEMO/e43127ad9018ad11dcc0a695356dbbb3/pwa",
   "display": "standalone",
   "theme_color": "red",
   "background_color":"green",
+  "scope": "/",
   "icons": [
     {
       "src": "Chip512.png",
