@@ -1,0 +1,71 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+body {
+    height: 100vh;
+    max-height: 100vh;
+    background: linear-gradient(0.37turn, #12abdb, #88d5ed);
+}
+
+div, p {
+    color:white;
+    font-family: Poppins, sans-serif;
+}
+
+.title-container {
+    background: #0070ad;
+    box-shadow: 0 0 12px 2px #000;
+}
+
+.install-banner {
+    border-radius: 42px;
+    background: #0070ad;
+    box-shadow: 0 0 12px 2px #000;
+}
+
+.install-banner .install-banner-text {
+    padding: 2vh 5vh;
+}
+
+.container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+
+.flag-container {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    padding: 0 5vh;
+    overflow: auto;
+}
+
+.flag-container>div {
+    display: flex;
+    height: 16vh;
+    padding: 1.5vh;
+    margin: 2vh 0;
+    background: #0070ad;
+    box-shadow: 0 0 8px 2px #000;
+}
+
+.flag {
+    height: 100%;
+    width: 24vh;
+    margin: 0;
+}
+
+.flag-text {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+.flag-text>p {
+    padding-left: 8vw;
+    margin: 0;
+    font-size: 20px;
+}

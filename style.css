@@ -10,12 +10,10 @@ body {
 }
 
 .title-container {
-    position: fixed;
+    position: relative;
     top: 0vh;
     width: 100%;
     margin: 0;
-    background-color: #7a7373;
-    opacity: 0.8;
     align-self: center;
     box-shadow: 0 0 10px 2px #888888;
 }
@@ -32,9 +30,7 @@ body {
 .flag-container {
     display: flex;
     flex-wrap: wrap;
-    place-content: center;    
-    padding-top: 10vh;    
-    padding-bottom: 12vh;
+    place-content: center;
 }
 
 .flag {
@@ -50,11 +46,8 @@ body {
 }
 
 .install-banner {
-    background-color: #7a7373;
-    position: fixed;
-    bottom: 5px;
-    width: 80vw;
-    height: 10vh;
+    position: absolute;
+    bottom: 10px;
     opacity: 0.8;
     align-self: center;
     box-shadow: 0 0 10px 2px #888888;
