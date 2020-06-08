@@ -5,18 +5,20 @@ function addFlags(...args) {
 
 }
 
-addFlag('en');
 addFlag('br');
 addFlag('en');
-addFlag('en');
-addFlag('en');
-addFlag('en');
+addFlag('es');
+addFlag('de');
+addFlag('fr');
+addFlag('it');
 
 function addFlag(language) {
     var box = document.createElement('div');
     box.innerHTML = `
 <div class="flag flag-${language}"></div>
-<div class="flag-text"><p>${language}</p></div>
+<div class="flag-text">
+    <p>${language}</p>
+</div>
 `;
     box.setAttribute("onclick", "openBot()");
     flagContainer.appendChild(box);
