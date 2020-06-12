@@ -20,7 +20,7 @@
         <p class="title">Chip Virtaul Asistant</p>
       </div>
       <div class="header-collapse" id="headerCollapse">
-        <button class="install-button">Install App</button>
+        <button class="install-button" id="install-button">Install App</button>
       </div>
     </div>
     <div class="flags-container" id="flagsContainer"></div>
@@ -50,6 +50,7 @@
       e.preventDefault();
       deferredPrompt = e;
     });
+
 
     var buttonInstall = document.getElementById('install-button');
     buttonInstall.addEventListener('click', (e) => {

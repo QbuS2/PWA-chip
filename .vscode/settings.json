@@ -1,3 +1,9 @@
 {
-    "liveServer.settings.port": 0
+    "liveServer.settings.port": 5500,
+    "liveServer.settings.https": {
+        "enable": true,
+        "cert": "C:/Users/JAMATURA/Documents/VS Code HTTPS/localhost.pem",
+        "key": "C:/Users/JAMATURA/Documents/VS Code HTTPS/localhost.key",
+        "passphrase": "Daromi"
+    }
 }

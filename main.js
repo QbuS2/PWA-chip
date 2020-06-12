@@ -4,27 +4,33 @@ var uiBundle = "capgeminidemo";
 var domains = {
     en: {
         domainCode: "capgeminidemo",
-        label: "English"
+        label: "English",
+        info: "Custom message"
     },
     de: {
         domainCode: "capgeminidemo",
-        label: "Germany"
+        label: "Germany",
+        info: "Agents are currently not available"
     },
     fr: {
         domainCode: "capgeminidemo",
-        label: "Francuski"
+        label: "Francuski",
+        info: "Agents are currently not available"
     },
     es: {
         domainCode: "capgeminidemo",
-        label: "Hiszpański"
+        label: "Hiszpański",
+        info: "Agents are currently not available"
     },
     br: {
         domainCode: "capgeminidemo",
-        label: "Brazylijski"
+        label: "Brazylijski",
+        info: "Agents are currently not available"
     },
     it: {
         domainCode: "capgeminidemo",
-        label: "Italiano"
+        label: "Italiano",
+        info: "Agents are currently not available"
     }
 }
 
@@ -35,17 +41,17 @@ addFlags();
 
 function addFlags() {
     for (var language in domains) {
-        console.log("language '" + language + "' has domain: " + domains[language].domainCode);
         addFlag(
             language,
             domains[language].domainCode,
-            domains[language].label
-        )
+            domains[language].label,
+            domains[language].info
+            )
     }    
 }
 
 
-function addFlag(language, domain, label) {
+function addFlag(language, domain, label, info) {
     var box = document.createElement('div');
     box.className = "flag-container-outer";
     box.innerHTML = `
@@ -55,7 +61,7 @@ function addFlag(language, domain, label) {
             <p>${label}</p>
         </div>
         <div class="flag-info hidden">
-            <p>Agents are currently not available</p>
+            <p>${info}</p>
         </div>
     </div>
     `;
@@ -89,11 +95,8 @@ var prevScrollpos =  flagsContainer.scrollTop;
 
 let draggableItems = document.querySelectorAll('.flag-container-inner');
 let initialX;
-let initialY;
 let offsetX = 0;
-let offsetY = 0;
 let startingX;
-let startingY;
 let targetElement;
 let lastActiveDropArea = null;
 
@@ -128,14 +131,13 @@ let touchEndtHandler = function (event) {
 };
 
 /* Create handlers to each interaction */
-let interactionStart = function (element, coordX, coordY) {
+let interactionStart = function (element, coordX) {
 
     // Defines variables
     let draggableItemRect = element.getBoundingClientRect();
 
     /* Sets initial values */
     initialX = coordX;
-    initialY = coordY;
     startingX = draggableItemRect.left;
     // startingX = document.body.clientWidth/100 -document.body.clientWidth;
     /* Adds active class */
@@ -144,17 +146,16 @@ let interactionStart = function (element, coordX, coordY) {
     // }
 };
 
-let interactionMove = function (element, coordX, coordY) {
+let interactionMove = function (element, coordX) {
     /* Sets offset values */
     offsetX = coordX - initialX;
-    offsetY = coordY - initialY;
     console.log(`OffsetX: ${offsetX.toFixed(2)}, startingX: ${startingX.toFixed(2)}, difference: ${(startingX - offsetX).toFixed(2)}`)
 
     /* Transforms the UI to move the element */
     element.style.transform = "translateX(" + (startingX + offsetX) + "px) ";
 };
 
-let interactionEnd = function (element, coordX, coordY) {
+let interactionEnd = function (element, coordX) {
 
     if (offsetX < -50) {
         console.error("123");
