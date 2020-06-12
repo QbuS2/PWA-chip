@@ -1,0 +1,35 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel {
+    width: 60vw;
+}
+
+.splide__slide{
+
+    background-color: red;
+}
+
+.is-active{
+    background-color: blue !important;
+}
+
+.panel{
+    background-color: green;
+    height: 10vh;
+    width: 100vw;
+}
+
+.title-container{
+    height: 10vh;
+    width: 100vw;
+    background-color: blueviolet;
+}

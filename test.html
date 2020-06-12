@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <link rel="stylesheet" href="drugi.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title-container">
+            <p class="title">Please Select the Language</p>
+          </div>
+        <div class="carousel">
+            <div class="splide">
+                <div class="splide__track">
+                    <div class="splide__list">
+                        <div class="splide__slide">
+                            <div class="box">Slide 1</div>
+                        </div>
+                        <div class="splide__slide">
+                            <div class="box">Slide 2</div>
+                        </div>
+                        <div class="splide__slide">
+                            <div class="box">Slide 3</div>
+                        </div>
+                        <div class="splide__slide">
+                            <div class="box">Slide 4</div>
+                        </div>
+                        <div class="splide__slide">
+                            <div class="box">Slide 5</div>
+                        </div>
+                        <div class="splide__slide">
+                            <div class="box">Slide 11</div>
+                        </div>
+                        <div class="splide__slide">
+                            <div class="box">Slide 22</div>
+                        </div>
+                        <div class="splide__slide">
+                            <div class="box">Slide 33</div>
+                        </div>
+                        <div class="splide__slide">
+                            <div class="box">Slide 44</div>
+                        </div>
+                        <div class="splide__slide">
+                            <div class="box">Slide 55</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            Hours 24/h
+        </div>
+    </div>
+
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        new Splide('.splide', {
+            type: 'loop',
+            rewind: true,
+            focus: 'center',
+            perPage: 4,
+            perMove: 3,
+            gap: '1em',
+            easing: 'linear',
+            arrows: false,
+            pagination: false,
+            autoplay: false,
+            keyboard: true,
+            direction: 'ttb',
+            height: '80vh',
+            updateOnMove: true,
+        }).mount();
+    });
+</script>
+
+</html>
