@@ -53,7 +53,7 @@ function addFlags() {
 
 function addFlag(language, domain, label, info) {
     var box = document.createElement('div');
-    box.className = "flag-container-outer";
+    box.className = "splide__slide";
     box.innerHTML = `
     <div class="flag-container-inner">
         <div class="flag flag-${language}"></div>
@@ -90,103 +90,124 @@ var prevScrollpos =  flagsContainer.scrollTop;
 }
 
 
-// ==================================================
-
-
-let draggableItems = document.querySelectorAll('.flag-container-inner');
-let initialX;
-let offsetX = 0;
-let startingX;
-let targetElement;
-let lastActiveDropArea = null;
-
-let resetTransitionEndHandler = function () {
-    // Removes the style
-    this.removeAttribute('style');
-};
-
-/* Creates a handler for each event listener */
-let touchStartHandler = function (event) {
-    draggableItems.forEach(draggableItem => {
-    if (event.target == draggableItem) {
-        interactionStart(event.target, event.touches[0].pageX, event.touches[0].pageY);
-    } else {
-        return;
-    }
-    });
-};
-
-let touchMovetHandler = function (event) {
-    draggableItems.forEach(draggableItem => {
-    if (event.target == draggableItem) {
-        interactionMove(event.target, event.touches[0].pageX, event.touches[0].pageY);
-    } else {
-        return;
-    }
-    });
-};
-
-let touchEndtHandler = function (event) {
-    interactionEnd(event.target, event.changedTouches[0].pageX, event.changedTouches[0].pageY);
-};
-
-/* Create handlers to each interaction */
-let interactionStart = function (element, coordX) {
-
-    // Defines variables
-    let draggableItemRect = element.getBoundingClientRect();
-
-    /* Sets initial values */
-    initialX = coordX;
-    startingX = draggableItemRect.left;
-    // startingX = document.body.clientWidth/100 -document.body.clientWidth;
-    /* Adds active class */
-    // if (!element.classList.contains('active')) {
-    //     element.classList.add('active');
-    // }
-};
-
-let interactionMove = function (element, coordX) {
-    /* Sets offset values */
-    offsetX = coordX - initialX;
-    console.log(`OffsetX: ${offsetX.toFixed(2)}, startingX: ${startingX.toFixed(2)}, difference: ${(startingX - offsetX).toFixed(2)}`)
-
-    /* Transforms the UI to move the element */
-    element.style.transform = "translateX(" + (startingX + offsetX) + "px) ";
-};
-
-let interactionEnd = function (element, coordX) {
-
-    if (offsetX < -50) {
-        console.error("123");
-        element.classList.add('active');
-        element.querySelector('.flag-text').classList.add('hidden');
-        element.querySelector('.flag-info').classList.remove('hidden');
-    }else{
-        console.error("abc");
-        if(offsetX > 100){
-            openBot('capgeminidemo');
-        }
-        element.classList.remove('active');
-        element.querySelector('.flag-text').classList.remove('hidden');
-        element.querySelector('.flag-info').classList.add('hidden');
-
-    }
-    element.style.transform = "translateX(" + startingX + "px) ";
-    element.addEventListener('transitionend', resetTransitionEndHandler);
-};
-
-/* Creates the necessary functions */
-let addEventListeners = function (element) {
-    /* Touch related events */
-    element.addEventListener('touchstart', touchStartHandler);
-    element.addEventListener('touchmove', touchMovetHandler);
-    element.addEventListener('touchend', touchEndtHandler);
-};
-
-/* Executes a function to create all event listeners */
-draggableItems.forEach(draggableItem => {
-    addEventListeners(draggableItem);
+document.addEventListener('DOMContentLoaded', function () {
+    new Splide('.splide', {
+        type: 'loop',
+        rewind: true,
+        focus: 'center',
+        perPage: 4,
+        perMove: 3,
+        gap: '1em',
+        easing: 'linear',
+        arrows: false,
+        pagination: false,
+        autoplay: false,
+        keyboard: true,
+        direction: 'ttb',
+        height: '80vh',
+        updateOnMove: true,
+    }).mount();
 });
 
+// // ==================================================
+
+
+// let draggableItems = document.querySelectorAll('.flag-container-inner');
+// let initialX;
+// let offsetX = 0;
+// let startingX;
+// let targetElement;
+// let lastActiveDropArea = null;
+
+// let resetTransitionEndHandler = function () {
+//     // Removes the style
+//     this.removeAttribute('style');
+// };
+
+// /* Creates a handler for each event listener */
+// let touchStartHandler = function (event) {
+//     draggableItems.forEach(draggableItem => {
+//     if (event.target == draggableItem) {
+//         interactionStart(event.target, event.touches[0].pageX, event.touches[0].pageY);
+//     } else {
+//         return;
+//     }
+//     });
+// };
+
+// let touchMovetHandler = function (event) {
+//     draggableItems.forEach(draggableItem => {
+//     if (event.target == draggableItem) {
+//         interactionMove(event.target, event.touches[0].pageX, event.touches[0].pageY);
+//     } else {
+//         return;
+//     }
+//     });
+// };
+
+// let touchEndtHandler = function (event) {
+//     interactionEnd(event.target, event.changedTouches[0].pageX, event.changedTouches[0].pageY);
+// };
+
+// /* Create handlers to each interaction */
+// let interactionStart = function (element, coordX) {
+
+//     // Defines variables
+//     let draggableItemRect = element.getBoundingClientRect();
+
+//     /* Sets initial values */
+//     initialX = coordX;
+//     startingX = draggableItemRect.left;
+//     // startingX = document.body.clientWidth/100 -document.body.clientWidth;
+//     /* Adds active class */
+//     // if (!element.classList.contains('active')) {
+//     //     element.classList.add('active');
+//     // }
+// };
+
+// let interactionMove = function (element, coordX) {
+//     /* Sets offset values */
+//     offsetX = coordX - initialX;
+//     console.log(`OffsetX: ${offsetX.toFixed(2)}, startingX: ${startingX.toFixed(2)}, difference: ${(startingX - offsetX).toFixed(2)}`)
+
+//     /* Transforms the UI to move the element */
+//     element.style.transform = "translateX(" + (startingX + offsetX) + "px) ";
+// };
+
+// let interactionEnd = function (element, coordX) {
+
+//     if (offsetX < -50) {
+//         console.error("123");
+//         element.classList.add('active');
+//         element.querySelector('.flag-text').classList.add('hidden');
+//         element.querySelector('.flag-info').classList.remove('hidden');
+//     }else{
+//         console.error("abc");
+//         if(offsetX > 100){
+//             openBot('capgeminidemo');
+//         }
+//         element.classList.remove('active');
+//         element.querySelector('.flag-text').classList.remove('hidden');
+//         element.querySelector('.flag-info').classList.add('hidden');
+
+//     }
+//     element.style.transform = "translateX(" + startingX + "px) ";
+//     element.addEventListener('transitionend', resetTransitionEndHandler);
+// };
+
+// /* Creates the necessary functions */
+// let addEventListeners = function (element) {
+//     /* Touch related events */
+//     element.addEventListener('touchstart', touchStartHandler);
+//     element.addEventListener('touchmove', touchMovetHandler);
+//     element.addEventListener('touchend', touchEndtHandler);
+// };
+
+// /* Executes a function to create all event listeners */
+// draggableItems.forEach(draggableItem => {
+//     addEventListeners(draggableItem);
+// });
+
 window.addEventListener("orientationchange", function() {draggableItems.forEach(draggableItem => {draggableItem.removeAttribute('style')})}, false);
+
+//================================================

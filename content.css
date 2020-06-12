@@ -98,11 +98,11 @@ button, div, p {
     overflow-x: hidden;  
 }
 
-.flags-container>.flag-container-outer:nth-child(even) {
+.flag-container-inner:nth-child(even) {
     background-color: #ececec;
 }
 
-.flags-container>.flag-container-outer>.flag-container-inner {
+.flag-container-inner {
     display: flex;
     height: 12vh;
     width: 200%;
@@ -112,7 +112,7 @@ button, div, p {
     transform: translateX(-100vw);
 }
 
-.flags-container>.flag-container-outer>.flag-container-inner.active {
+.flag-container-inner.active {
     padding-left: 101.5vw;
 }
 
@@ -153,11 +153,30 @@ button, div, p {
     white-space: normal;
 }
 
-.flags-container>.flag-container-outer>.flag-container-inner div,
-.flags-container>.flag-container-outer>.flag-container-inner p {
+.flag-container-inner div,
+.flag-container-inner p {
     pointer-events: none;
 }
 
 .hidden {
     display: none !important;
+}
+
+.is-active{
+    background-color: red;
+    transition: linear;
+    animation: slow_scale;
+}
+
+@keyframes slow_scale {
+
+    0% {
+        transform: scale(1);
+     }
+     50% {
+        transform:  scale(1.2);
+     }
+     100% {
+        transform: scale(1.5);
+     }
 }
