@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]> <html class=" lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class=" lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class=" lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Carousel</title>
+
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="x.css">
+    <script src='jquery.js'></script>
+    <script src='x.js'></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#carousel').carousel3d();
+        
+        });
+    </script>
+
+    <style type="text/css">
+        #perspective {
+            width: 210px;
+            height: 140px;
+            -webkit-perspective: 1100px;
+            perspective: 1100px;
+            margin: 150px;
+        }
+
+        #carousel {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -webkit-transform: rotateY(0deg) translateZ(-288px);
+        }
+
+        #carousel figure {
+            display: block;
+            position: absolute;
+            background: #399294;
+            width: 186px;
+            height: 116px;
+            opacity: 0.6;
+            margin: 12px;
+            color: #fff;
+            cursor: pointer;
+            -webkit-transition: opacity 1s, -webkit-transform 1s;
+            -moz-transition: opacity 1s, -moz-transform 1s;
+            -o-transition: opacity 1s, -o-transform 1s;
+            transition: opacity 1s, transform 1s;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="perspective">
+            <div id="carousel">
+                <figure>1</figure>
+                <figure>2</figure>
+                <figure>3</figure>
+                <figure>4</figure>
+                <figure>5</figure>
+                <figure>6</figure>
+                <figure>7</figure>
+                <figure>8</figure>
+                <figure>9</figure>
+                <figure>10</figure>
+            </div>
+        </div>
+        <button class="prev"> Prev </button>
+        <button class="next"> Next </button>
+        <p id="test"> </p>
+    </div>
+</body>
+
+</html>

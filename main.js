@@ -57,21 +57,21 @@ function addFlag(language, domain, label, info) {
     box.innerHTML = `
     <div class="flag-container-inner">
         <div class="flag flag-${language}"></div>
-        <div class="flag-text">
-            <p>${label}</p>
-        </div>
-        <div class="flag-info hidden">
-            <p>${info}</p>
-        </div>
     </div>
     `;
+//     <div class="flag-text">
+//     <p>${label}</p>
+// </div>
+// <div class="flag-info hidden">
+//     <p>${info}</p>
+// </div>
     box.setAttribute("onclick", `openBot('${domain}')`);
      flagsContainer.appendChild(box);
 }
 
 function openBot(domain ="capgeminidemo") {
     console.warn("Clicked!");
-    window.location.href = `https://capgemini-eu.dev.amelia.com/Amelia/ui/${uiBundle}/login?embed=iframe&domainCode=${domain}&language=en&hint=Hello world!&delay=5000`;
+    // window.location.href = `https://capgemini-eu.dev.amelia.com/Amelia/ui/${uiBundle}/login?embed=iframe&domainCode=${domain}&language=en&hint=Hello world!&delay=5000`;
 }
 
 var collapseElement = document.getElementById("headerCollapse"); 
@@ -97,17 +97,33 @@ document.addEventListener('DOMContentLoaded', function () {
         focus: 'center',
         perPage: 4,
         perMove: 3,
-        gap: '1em',
         easing: 'linear',
         arrows: false,
         pagination: false,
         autoplay: false,
         keyboard: true,
         direction: 'ttb',
-        height: '80vh',
+        height: '70vh',
         updateOnMove: true,
     }).mount();
 });
+
+
+// var target = document.querySelector('#flagsContainer');
+// var observer = new MutationObserver(function(mutations) {
+//   mutations.forEach(function(mutation) {
+//     document.querySelectorAll(".splide__slide:not([is-visible])").forEach(element => {
+//         element.style.transform = 'perspective(200px) rotateX(-20deg) scale(0.9) ';
+//     });
+//     document.querySelectorAll(".is-visible")[0].style.transform = 'scale(1.1) translate3d(0px, -10px, 0px) perspective(200px) rotateX(20deg)';
+//     document.querySelectorAll(".is-visible")[1].style.transform = 'rotateX(0deg) scale(1.2)';
+//     document.querySelectorAll(".is-visible")[2].style.transform = 'scale(1.1) translate3d(0px, 10px, 0px) perspective(200px) rotateX(-20deg)';
+
+//   });    
+// });
+// var config = { attributes: true, childList: true, characterData: true };
+// observer.observe(target, config);
+
 
 // // ==================================================
 
